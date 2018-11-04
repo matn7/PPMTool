@@ -22,7 +22,8 @@ public class Backlog {
     private Project project;
 
     // OneToMany project tasks
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "backlog")
+    // orphan removal - child entities no longer referenced from parent, it get rid of child
+    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, mappedBy = "backlog", orphanRemoval = true)
     private List<ProjectTask> projectTasks = new ArrayList<>();
 
     public Backlog() {
