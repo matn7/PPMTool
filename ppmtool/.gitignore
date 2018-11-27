@@ -23,3 +23,5 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+ppmtool/src/main/java/com/pandatronik/ppmtool/security/**
